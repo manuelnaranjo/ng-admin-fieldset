@@ -1,0 +1,16 @@
+<fieldset>
+  <legend>{{::field.label()}}</legend>
+  <div class="row-fluid" ng-repeat="row in ::field.rows()"
+       ng-class="::row.getCssClasses()">
+    <div ng-repeat="rowField in ::row.fields()" class="form-group"
+         ng-class="::row.editCssSpanClass(rowField)">
+      <ma-field field="::rowField"
+                value="entry.values[rowField.name()]"
+                entry="entry"
+                entity="entity"
+                form="form"
+                datastore="datastore">
+      </ma-field>
+    </div>
+  </div>
+</fieldset>
