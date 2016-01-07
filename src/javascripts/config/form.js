@@ -11,7 +11,7 @@ function maFieldDelegate($delegate, $compile) {
         return;
       }
 
-      const template = require('./maFieldTemplate.html');
+      const template = require('./fieldsetForm.html');
       element.append(template);
       scope.field = field;
       scope.entity = scope.entity();
@@ -33,6 +33,4 @@ function config(NgAdminConfigurationProvider, $provide) {
 
 config.$inject = ['NgAdminConfigurationProvider', '$provide'];
 
-export default function(app) {
-  app.config(config);
-}
+export default config;
